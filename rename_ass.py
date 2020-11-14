@@ -53,4 +53,4 @@ if __name__ == '__main__':
     # 例如 'G:\\anime\\Fate Zero_ 2011_ VCB-Studio'
     # 或   'G:/anime/Fate Zero_ 2011_ VCB-Studio'
     # 或使用r+路径 r'G:\anime\Fate Zero_ 2011_ VCB-Studio'
-    main('/Users/developer/Movies/最近我的妹妹有点怪')
+    main('/Users/developer/Movies')
