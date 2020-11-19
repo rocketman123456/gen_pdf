@@ -94,15 +94,29 @@ if __name__ == '__main__':
     id = 0
     _threads = []
     print(fitz.__doc__)
+    #for path in paths:    
+    #    for category in os.listdir(path):
+    #        if os.path.isdir(os.path.join(path, category)) and category != 'success':
+    #            _thread = MyThread(threadID=id, path=path, category=category)
+    #            _thread.start()
+    #            _threads.append(_thread)
+    #            #_thread.join()
+    #    for thread in _threads:
+    #        thread.join()
+    #    _threads.clear()
+    #    print('Done ', path)
+    #print('End')
+
     for path in paths:    
-        for category in os.listdir(path):
-            if os.path.isdir(os.path.join(path, category)) and category != 'success':
-                _thread = MyThread(threadID=id, path=path, category=category)
-                _thread.start()
-                _threads.append(_thread)
-                _thread.join()
-        #for thread in _threads:
-        #    thread.join()
-        _threads.clear()
+        for author in os.listdir(path):
+            for category in os.listdir(author):
+                if os.path.isdir(os.path.join(path, category)) and category != 'success':
+                    _thread = MyThread(threadID=id, path=path, category=category)
+                    _thread.start()
+                    _threads.append(_thread)
+                    #_thread.join()
+            for thread in _threads:
+                thread.join()
+            _threads.clear()
         print('Done ', path)
     print('End')
