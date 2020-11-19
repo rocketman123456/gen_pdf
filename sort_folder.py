@@ -44,7 +44,6 @@ paths = [
     #'G:\\Comic\\202009\\',
     #'G:\\Comic\\202010\\',
 ]
-sort_path = 'G:\\Comic\\sorted\\'
 #-----------------------------------------------------------------
 # match [author]
 pattern = r'^\[.+?\]'
@@ -66,18 +65,19 @@ for path in paths:
 #-----------------------------------------------------------------
 np.save('comic.npy', stored_data)
 restored_data = np.load('comic.npy', allow_pickle=True).item()
+sort_path = 'G:\\Comic\\sorted\\'
 #-----------------------------------------------------------------
-for author in stored_data:
+for author in restored_data:
     new_author_path = os.path.join(sort_path, author)
     print(new_author_path)
     isExists = os.path.exists(new_author_path)
     if not isExists:
         os.makedirs(new_author_path)
-    for comic in stored_data[author]:
+    for comic in restored_data[author]:
         old_comic_path = comic
         new_comic_path = old_comic_path.replace(author + ' ','')
         #print(old_comic_path)
-        print(new_comic_path)
+        #print(new_comic_path)
         #os.rename(os.path.join(path,category),os.path.join(path,_category))
         #shutil.move(new_comic_path, new_author_path)
 #-----------------------------------------------------------------
