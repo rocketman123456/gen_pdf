@@ -58,9 +58,6 @@ for path in paths:
             result = re.match(pattern=pattern, string=folder)
             if result != None :
                 author = result.group()
-                #print(result.group())
-                #new_name = folder.replace(result.group(),'')
-                #print(new_name)
                 if(author not in stored_data):
                     stored_data[author] = []
                 stored_data[author].append(os.path.join(path, folder))

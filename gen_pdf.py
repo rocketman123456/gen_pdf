@@ -18,7 +18,8 @@ paths = [
     '/path/to/comic/',
 ]
 ignore = '.DS_Store'
-filetypeList = ['.png', '.jpg', '.jpeg', '.JPG', '.PNG', '.webp']
+#filetypeList = ['.png', '.jpg', '.jpeg', '.JPG', '.PNG', '.webp']
+filetypeList = ['.png', '.jpg', '.jpeg', '.JPG', '.PNG']
 
 # 将文件夹中所有jpg图片全部转换为一个指定名称的pdf文件，并保存至指定文件夹
 def pic2pdf(img_path, pdf_path, pdf_name):
@@ -94,29 +95,29 @@ if __name__ == '__main__':
     id = 0
     _threads = []
     print(fitz.__doc__)
-    #for path in paths:    
-    #    for category in os.listdir(path):
-    #        if os.path.isdir(os.path.join(path, category)) and category != 'success':
-    #            _thread = MyThread(threadID=id, path=path, category=category)
-    #            _thread.start()
-    #            _threads.append(_thread)
-    #            #_thread.join()
-    #    for thread in _threads:
-    #        thread.join()
-    #    _threads.clear()
-    #    print('Done ', path)
-    #print('End')
-
     for path in paths:    
-        for author in os.listdir(path):
-            for category in os.listdir(author):
-                if os.path.isdir(os.path.join(path, category)) and category != 'success':
-                    _thread = MyThread(threadID=id, path=path, category=category)
-                    _thread.start()
-                    _threads.append(_thread)
-                    #_thread.join()
-            for thread in _threads:
-                thread.join()
-            _threads.clear()
+        for category in os.listdir(path):
+            if os.path.isdir(os.path.join(path, category)) and category != 'success':
+                _thread = MyThread(threadID=id, path=path, category=category)
+                _thread.start()
+                _threads.append(_thread)
+                #_thread.join()
+        for thread in _threads:
+            thread.join()
+        _threads.clear()
         print('Done ', path)
     print('End')
+
+    #for path in paths:    
+    #    for author in os.listdir(path):
+    #        for category in os.listdir(author):
+    #            if os.path.isdir(os.path.join(path, category)) and category != 'success':
+    #                _thread = MyThread(threadID=id, path=path, category=category)
+    #                _thread.start()
+    #                _threads.append(_thread)
+    #                #_thread.join()
+    #        for thread in _threads:
+    #            thread.join()
+    #        _threads.clear()
+    #    print('Done ', path)
+    #print('End')
