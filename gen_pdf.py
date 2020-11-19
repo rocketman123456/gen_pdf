@@ -5,11 +5,11 @@ from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Image, PageBreak
 from reportlab.lib.pagesizes import A4,A3,A2,A1, legal, landscape
 from reportlab.lib.utils import ImageReader
-import PIL.Image,PIL.ExifTags
 from reportlab.lib.units import inch
+import PIL.Image,PIL.ExifTags
 
 import glob
-import fitz  # 导入本模块需安装pymupdf库
+import fitz  # 导入本模块需安装 pymupdf 库
 import os
 import shutil
 import threading
@@ -31,17 +31,17 @@ def pic2pdf(img_path, pdf_path, pdf_name):
             continue
         if filetype not in filetypeList:
             continue
-        elif filetype == filetypeList[5]:
-            print(os.path.join(img_path,img))
-            image_file = PIL.Image.open(os.path.join(img_path,img))
-            if image_file.mode == "RGBA":
-                image_file.load()
-                background = Image.new("RGB", image_file.size, (255, 255, 255))
-                background.paste(image_file, mask=image_file.split()[3])
-                image_file = background
-            save_name = img.replace('webp', 'jpg')
-            img = save_name
-            image_file.save('{}'.format(os.path.join(img_path,img)), 'JPEG')
+        #elif filetype == filetypeList[5]:
+        #    print(os.path.join(img_path,img))
+        #    image_file = PIL.Image.open(os.path.join(img_path,img))
+        #    if image_file.mode == "RGBA":
+        #        image_file.load()
+        #        background = Image.new("RGB", image_file.size, (255, 255, 255))
+        #        background.paste(image_file, mask=image_file.split()[3])
+        #        image_file = background
+        #    save_name = img.replace('webp', 'jpg')
+        #    img = save_name
+        #    image_file.save('{}'.format(os.path.join(img_path,img)), 'JPEG')
         imgs.append(img)
     imgs.sort()
     #print("Finish Sort Pics: ", pdf_name)
