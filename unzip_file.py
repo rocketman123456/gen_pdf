@@ -15,7 +15,7 @@ for path in paths:
             if os.path.splitext(zip_file)[1] == '.zip':
                 f = zipfile.ZipFile(os.path.join(path, zip_file), 'r')
             if os.path.splitext(zip_file)[1] == '.rar':
-                f = rarfile.RarFile(os.path.join(path, zip_file), 'r')
+                f = rarfile.RarFile(os.path.join(path, zip_file))
             namelist = f.namelist()
             for file_name in f.namelist():
                 extracted_path = Path(f.extract(file_name, path=path))
@@ -23,6 +23,7 @@ for path in paths:
             f.close()
             for name in namelist:
                 if os.path.isdir(os.path.join(path, name)):
+                    print(os.path.join(path, name))
                     os.rmdir(os.path.join(path, name))
                     break
 print('End')
