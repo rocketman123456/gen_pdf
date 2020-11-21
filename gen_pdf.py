@@ -15,7 +15,45 @@ import shutil
 import threading
 
 paths = [
-    '/path/to/comic/',
+    #'/Volumes/TOURO/Comic/201711/',
+    #'/Volumes/TOURO/Comic/201712/',
+
+    '/Volumes/TOURO/Comic/201801/',
+    '/Volumes/TOURO/Comic/201802/',
+    '/Volumes/TOURO/Comic/201803/',
+    #'/Volumes/TOURO/Comic/201804/',
+    #'/Volumes/TOURO/Comic/201805/',
+    #'/Volumes/TOURO/Comic/201806/',
+    #'/Volumes/TOURO/Comic/201807/',
+    #'/Volumes/TOURO/Comic/201808/',
+    #'/Volumes/TOURO/Comic/201809/',
+    #'/Volumes/TOURO/Comic/201810/',
+    #'/Volumes/TOURO/Comic/201811/',
+    #'/Volumes/TOURO/Comic/201812/',
+
+    #'/Volumes/TOURO/Comic/201901/',
+    #'/Volumes/TOURO/Comic/201902/',
+    #'/Volumes/TOURO/Comic/201903/',
+    #'/Volumes/TOURO/Comic/201904/',
+    #'/Volumes/TOURO/Comic/201905/',
+    #'/Volumes/TOURO/Comic/201906/',
+    #'/Volumes/TOURO/Comic/201907/',
+    #'/Volumes/TOURO/Comic/201908/',
+    #'/Volumes/TOURO/Comic/201909/',
+    #'/Volumes/TOURO/Comic/201910/',
+    #'/Volumes/TOURO/Comic/201911/',
+    #'/Volumes/TOURO/Comic/201912/',
+
+    #'/Volumes/TOURO/Comic/202001/',
+    ##'/Volumes/TOURO/Comic/202002/',
+    #'/Volumes/TOURO/Comic/202003/',
+    #'/Volumes/TOURO/Comic/202004/',
+    #'/Volumes/TOURO/Comic/202005/',
+    #'/Volumes/TOURO/Comic/202006/',
+    #'/Volumes/TOURO/Comic/202007/',
+    #'/Volumes/TOURO/Comic/202008/',
+    #'/Volumes/TOURO/Comic/202009/',
+    #'/Volumes/TOURO/Comic/202010/',
 ]
 ignore = '.DS_Store'
 #filetypeList = ['.png', '.jpg', '.jpeg', '.JPG', '.PNG', '.webp']
@@ -83,13 +121,14 @@ class MyThread (threading.Thread):
     def run(self):
         self.img_path = os.path.join(self.path, self.category)
         self.pdf_name = category + '.pdf'
+        #print(self.img_path)
         pic2pdf(img_path=self.img_path, pdf_path=self.path, pdf_name=self.pdf_name)
         
         self.img_path_success = self.path + 'success/'
         if os.path.exists(self.img_path_success) == False:
             os.mkdir(self.img_path_success)
         shutil.move(self.img_path, self.img_path_success)
-        print('Done ', self.pdf_name)
+        print('Done ', self.img_path)
 
 if __name__ == '__main__':
     id = 0
@@ -101,9 +140,9 @@ if __name__ == '__main__':
                 _thread = MyThread(threadID=id, path=path, category=category)
                 _thread.start()
                 _threads.append(_thread)
-                #_thread.join()
-        for thread in _threads:
-            thread.join()
+                _thread.join()
+        #for thread in _threads:
+        #    thread.join()
         _threads.clear()
         print('Done ', path)
     print('End')
