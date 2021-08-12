@@ -15,12 +15,23 @@ import shutil
 import threading
 
 paths = [
+    #'/Volumes/TOURO/Comic/[春輝]/',
+    #'/Volumes/TOURO/Comic/[高苗床 (高苗京鈴)]/',
+    #'/Volumes/TOURO/Comic/[鬼ノ仁]/',
+    #'/Volumes/TOURO/Comic/[甲斐ひろゆき]/',
+    #'/Volumes/TOURO/Comic/[蒟吉人]/',
+    #'/Volumes/TOURO/Comic/[堀博昭]/',
+    #'/Volumes/TOURO/Comic/[如月群真]/',
+    #'/Volumes/TOURO/Comic/[水龍敬]/',
+    #'/Volumes/TOURO/Comic/[アトリエ八福庵]/',
+    #'/Volumes/TOURO/Comic/[うみのさち (水平線)]/',
+    
     #'/Volumes/TOURO/Comic/201711/',
     #'/Volumes/TOURO/Comic/201712/',
 
-    '/Volumes/TOURO/Comic/201801/',
-    '/Volumes/TOURO/Comic/201802/',
-    '/Volumes/TOURO/Comic/201803/',
+    #'/Volumes/TOURO/Comic/201801/',
+    #'/Volumes/TOURO/Comic/201802/',
+    #'/Volumes/TOURO/Comic/201803/',
     #'/Volumes/TOURO/Comic/201804/',
     #'/Volumes/TOURO/Comic/201805/',
     #'/Volumes/TOURO/Comic/201806/',
@@ -45,7 +56,7 @@ paths = [
     #'/Volumes/TOURO/Comic/201912/',
 
     #'/Volumes/TOURO/Comic/202001/',
-    ##'/Volumes/TOURO/Comic/202002/',
+    #'/Volumes/TOURO/Comic/202002/',
     #'/Volumes/TOURO/Comic/202003/',
     #'/Volumes/TOURO/Comic/202004/',
     #'/Volumes/TOURO/Comic/202005/',
@@ -54,6 +65,7 @@ paths = [
     #'/Volumes/TOURO/Comic/202008/',
     #'/Volumes/TOURO/Comic/202009/',
     #'/Volumes/TOURO/Comic/202010/',
+    '/Users/developer/Downloads/pdf/'
 ]
 ignore = '.DS_Store'
 #filetypeList = ['.png', '.jpg', '.jpeg', '.JPG', '.PNG', '.webp']

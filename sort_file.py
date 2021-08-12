@@ -4,24 +4,24 @@ import numpy as np
 import shutil
 #-----------------------------------------------------------------
 paths = [
-    '/Volumes/TOURO/Comic/201711/',
-    '/Volumes/TOURO/Comic/201712/',
+    #'/Volumes/TOURO/Comic/201711/',
+    #'/Volumes/TOURO/Comic/201712/',
 
-    '/Volumes/TOURO/Comic/201801/',
-    '/Volumes/TOURO/Comic/201802/',
-    '/Volumes/TOURO/Comic/201803/',
-    '/Volumes/TOURO/Comic/201804/',
-    '/Volumes/TOURO/Comic/201805/',
-    '/Volumes/TOURO/Comic/201806/',
-    '/Volumes/TOURO/Comic/201807/',
-    '/Volumes/TOURO/Comic/201808/',
-    '/Volumes/TOURO/Comic/201809/',
-    '/Volumes/TOURO/Comic/201810/',
-    '/Volumes/TOURO/Comic/201811/',
-    '/Volumes/TOURO/Comic/201812/',
+    #'/Volumes/TOURO/Comic/201801/',
+    #'/Volumes/TOURO/Comic/201802/',
+    #'/Volumes/TOURO/Comic/201803/',
+    #'/Volumes/TOURO/Comic/201804/',
+    #'/Volumes/TOURO/Comic/201805/',
+    #'/Volumes/TOURO/Comic/201806/',
+    #'/Volumes/TOURO/Comic/201807/',
+    #'/Volumes/TOURO/Comic/201808/',
+    #'/Volumes/TOURO/Comic/201809/',
+    #'/Volumes/TOURO/Comic/201810/',
+    #'/Volumes/TOURO/Comic/201811/',
+    #'/Volumes/TOURO/Comic/201812/',
 
-    '/Volumes/TOURO/Comic/201901/',
-    '/Volumes/TOURO/Comic/201902/',
+    #'/Volumes/TOURO/Comic/201901/',
+    #'/Volumes/TOURO/Comic/201902/',
     '/Volumes/TOURO/Comic/201903/',
     '/Volumes/TOURO/Comic/201904/',
     '/Volumes/TOURO/Comic/201905/',
@@ -33,16 +33,16 @@ paths = [
     '/Volumes/TOURO/Comic/201911/',
     '/Volumes/TOURO/Comic/201912/',
 
-    '/Volumes/TOURO/Comic/202001/',
-    #'/Volumes/TOURO/Comic/202002/',
-    '/Volumes/TOURO/Comic/202003/',
-    '/Volumes/TOURO/Comic/202004/',
-    '/Volumes/TOURO/Comic/202005/',
-    '/Volumes/TOURO/Comic/202006/',
-    '/Volumes/TOURO/Comic/202007/',
-    '/Volumes/TOURO/Comic/202008/',
-    '/Volumes/TOURO/Comic/202009/',
-    '/Volumes/TOURO/Comic/202010/',
+    #'/Volumes/TOURO/Comic/202001/',
+    ##'/Volumes/TOURO/Comic/202002/',
+    #'/Volumes/TOURO/Comic/202003/',
+    #'/Volumes/TOURO/Comic/202004/',
+    #'/Volumes/TOURO/Comic/202005/',
+    #'/Volumes/TOURO/Comic/202006/',
+    #'/Volumes/TOURO/Comic/202007/',
+    #'/Volumes/TOURO/Comic/202008/',
+    #'/Volumes/TOURO/Comic/202009/',
+    #'/Volumes/TOURO/Comic/202010/',
 ]
 #-----------------------------------------------------------------
 # match [author]
@@ -78,7 +78,7 @@ for author in restored_data:
         new_comic_path = old_comic_path.replace(author + ' ','')
         print(old_comic_path)
         print(new_comic_path)
-        os.rename(os.path.join(path,category),os.path.join(path,_category))
+        os.rename(old_comic_path, new_comic_path)
         shutil.move(new_comic_path, new_author_path)
 #-----------------------------------------------------------------
 print('End')
