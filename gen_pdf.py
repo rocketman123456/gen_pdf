@@ -15,56 +15,6 @@ import shutil
 import threading
 
 paths = [
-    #'/Volumes/TOURO/Comic/[春輝]/',
-    #'/Volumes/TOURO/Comic/[高苗床 (高苗京鈴)]/',
-    #'/Volumes/TOURO/Comic/[鬼ノ仁]/',
-    #'/Volumes/TOURO/Comic/[甲斐ひろゆき]/',
-    #'/Volumes/TOURO/Comic/[蒟吉人]/',
-    #'/Volumes/TOURO/Comic/[堀博昭]/',
-    #'/Volumes/TOURO/Comic/[如月群真]/',
-    #'/Volumes/TOURO/Comic/[水龍敬]/',
-    #'/Volumes/TOURO/Comic/[アトリエ八福庵]/',
-    #'/Volumes/TOURO/Comic/[うみのさち (水平線)]/',
-    
-    #'/Volumes/TOURO/Comic/201711/',
-    #'/Volumes/TOURO/Comic/201712/',
-
-    #'/Volumes/TOURO/Comic/201801/',
-    #'/Volumes/TOURO/Comic/201802/',
-    #'/Volumes/TOURO/Comic/201803/',
-    #'/Volumes/TOURO/Comic/201804/',
-    #'/Volumes/TOURO/Comic/201805/',
-    #'/Volumes/TOURO/Comic/201806/',
-    #'/Volumes/TOURO/Comic/201807/',
-    #'/Volumes/TOURO/Comic/201808/',
-    #'/Volumes/TOURO/Comic/201809/',
-    #'/Volumes/TOURO/Comic/201810/',
-    #'/Volumes/TOURO/Comic/201811/',
-    #'/Volumes/TOURO/Comic/201812/',
-
-    #'/Volumes/TOURO/Comic/201901/',
-    #'/Volumes/TOURO/Comic/201902/',
-    #'/Volumes/TOURO/Comic/201903/',
-    #'/Volumes/TOURO/Comic/201904/',
-    #'/Volumes/TOURO/Comic/201905/',
-    #'/Volumes/TOURO/Comic/201906/',
-    #'/Volumes/TOURO/Comic/201907/',
-    #'/Volumes/TOURO/Comic/201908/',
-    #'/Volumes/TOURO/Comic/201909/',
-    #'/Volumes/TOURO/Comic/201910/',
-    #'/Volumes/TOURO/Comic/201911/',
-    #'/Volumes/TOURO/Comic/201912/',
-
-    #'/Volumes/TOURO/Comic/202001/',
-    #'/Volumes/TOURO/Comic/202002/',
-    #'/Volumes/TOURO/Comic/202003/',
-    #'/Volumes/TOURO/Comic/202004/',
-    #'/Volumes/TOURO/Comic/202005/',
-    #'/Volumes/TOURO/Comic/202006/',
-    #'/Volumes/TOURO/Comic/202007/',
-    #'/Volumes/TOURO/Comic/202008/',
-    #'/Volumes/TOURO/Comic/202009/',
-    #'/Volumes/TOURO/Comic/202010/',
     '/Users/developer/Downloads/pdf/'
 ]
 ignore = '.DS_Store'
@@ -108,9 +58,9 @@ def pic2pdf(img_path, pdf_path, pdf_name):
         #print(os.path.join(img_path,img))
         try:
             imgdoc = fitz.open(os.path.join(img_path,img))
-            pdfbytes = imgdoc.convertToPDF()
+            pdfbytes = imgdoc.convert_to_pdf()
             imgpdf = fitz.open("pdf", pdfbytes)
-            doc.insertPDF(imgpdf)
+            doc.insert_pdf(imgpdf)
         except:
             print(os.path.join(img_path,img))
     # Save File ------------------------------------------
