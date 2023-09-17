@@ -4,7 +4,7 @@ import re
 import sys
 #设定文件路径
 paths = [
-    '/Volumes/TOURO/Comic/202008/success/[をのひなお ] 明日、私は誰かのカノジョ 1-20 [沒有漢化]/',
+    'E:/Other/Comic/',
 ]
 #对目录下的文件进行遍历
 for path in paths:
@@ -13,8 +13,8 @@ for path in paths:
         if os.path.isdir(os.path.join(path,category))==True:
             print(category)
             name1 = ''
-            name2 = '女友'
-            name3 = '[をのひなお ] 明日、私は誰かのカノジョ'
+            name2 = ' [漫之学园资源部]'
+            name3 = ''
             #pattern = re.findall(name,category)
             #_category = category.replace(name1,'')
             _category = category.replace(name2,name3)

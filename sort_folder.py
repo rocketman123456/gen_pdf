@@ -4,7 +4,7 @@ import numpy as np
 import shutil
 #-----------------------------------------------------------------
 paths = [
-    '/Volumes/TOURO/Cartoon/',
+    'E:/Other/Cartoon/',
     #'/Volumes/TOURO/Comic/201712/',
 
     #'/Volumes/TOURO/Comic/201801/',
@@ -71,7 +71,7 @@ np.save('comic_path.npy', path_data)
 np.save('comic_name.npy', name_data)
 restored_path = np.load('comic_path.npy', allow_pickle=True).item()
 restored_name = np.load('comic_name.npy', allow_pickle=True).item()
-sort_path = '/Volumes/TOURO/Cartoon/sorted/'
+sort_path = 'E:/Other/Cartoon/sorted/'
 #-----------------------------------------------------------------
 for author in restored_path:
     new_author_path = os.path.join(sort_path, author)
