@@ -4,6 +4,7 @@ import numpy as np
 import shutil
 #-----------------------------------------------------------------
 paths = [
+<<<<<<< HEAD
     'E:/Other/Cartoon/',
     #'/Volumes/TOURO/Comic/201712/',
 
@@ -43,6 +44,9 @@ paths = [
     #'/Volumes/TOURO/Comic/202008/',
     #'/Volumes/TOURO/Comic/202009/',
     #'/Volumes/TOURO/Comic/202010/',
+=======
+    '/Volumes/TOURO/Cartoon/',
+>>>>>>> d78904eb176f91caf77e677c3ef9f3aaa077123c
 ]
 #-----------------------------------------------------------------
 # match [author]

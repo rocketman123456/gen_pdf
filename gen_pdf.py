@@ -16,7 +16,11 @@ import shutil
 import threading
 
 paths = [
+<<<<<<< HEAD
     'C:/Users/75909/Documents/PDF/ノラネコ少女との暮らしかた/'
+=======
+    '/Users/developer/Downloads/pdf/'
+>>>>>>> d78904eb176f91caf77e677c3ef9f3aaa077123c
 ]
 ignore = '.DS_Store'
 filetypeList = ['.png', '.jpg', '.jpeg', '.JPG', '.PNG', '.bmp', '.BMP']
@@ -46,6 +50,7 @@ def pic2pdf(img_path, pdf_path, pdf_name):
     # Make PDF ------------------------------------------
     doc = fitz.open()
     for img in imgs:
+<<<<<<< HEAD
         # print(os.path.join(img_path,img))
         # try:
         print(f'Open {os.path.join(img_path, img)}')
@@ -55,6 +60,16 @@ def pic2pdf(img_path, pdf_path, pdf_name):
         doc.insert_pdf(imgpdf)
         # except:
         #     print('Error: ', os.path.join(img_path, img))
+=======
+        #print(os.path.join(img_path,img))
+        try:
+            imgdoc = fitz.open(os.path.join(img_path,img))
+            pdfbytes = imgdoc.convert_to_pdf()
+            imgpdf = fitz.open("pdf", pdfbytes)
+            doc.insert_pdf(imgpdf)
+        except:
+            print(os.path.join(img_path,img))
+>>>>>>> d78904eb176f91caf77e677c3ef9f3aaa077123c
     # Save File ------------------------------------------
     if os.path.exists(pdf_path + pdf_name):
         os.remove(pdf_path + pdf_name)
